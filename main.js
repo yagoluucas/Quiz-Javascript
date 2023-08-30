@@ -9,7 +9,7 @@ events.forEach(event => {
     nextSection.forEach(next => {
         next.addEventListener(event, nextElement)
 
-        const createButton = document.createElement('button')
+        const createButton = document.createElement('button') //movi para cá e arrumei o bug
     
         function nextElement(event){
             questions.forEach(secao => {
