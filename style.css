@@ -54,4 +54,15 @@ section {
 
 .ativo {
     display: block;
+    animation: question-animation 0.3s forwards;
+}
+
+@keyframes  question-animation{
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
