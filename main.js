@@ -18,7 +18,12 @@ events.forEach(event => {
                     event.target.parentNode.classList.remove('ativo')
                     event.target.parentNode.nextElementSibling.classList.add('ativo')
                } else if(lastSection == 'button') {
-                    
+                    const createButton = document.createElement('button')
+                    const lastElementBody = document.lastChild
+                    createButton.innerText = 'Enviar Respostas'
+                    createButton.classList.add('enviar') 
+                    lastElementBody.appendChild(createButton)
+
                }
             })
         }
