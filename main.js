@@ -1,7 +1,9 @@
 const nextSection = document.querySelectorAll("[data-next]")
 const previousSection = document.querySelectorAll('[data-previous]')
 const questions = document.querySelectorAll('section')
+const submitQuestions = document.querySelector('.btn-submit')
 const events = ['click', 'touchstart']
+const lastElementBody = document.lastChild // movi para cá para usar na hora que mostrar o resultado
 
 
 events.forEach(event => {
@@ -20,7 +22,6 @@ events.forEach(event => {
                     event.target.parentNode.classList.remove('ativo')
                     event.target.parentNode.nextElementSibling.classList.add('ativo')
                } else if(lastSection == 'button') {
-                const lastElementBody = document.lastChild
                 createButton.innerText = 'Enviar Respostas'
                 createButton.classList.add('btn-submit') 
                 lastElementBody.appendChild(createButton)
@@ -42,4 +43,16 @@ events.forEach(event => {
         }
     })
 })
+
+//iniciado o evento para mostrar o resultado :
+
+submitQuestions.addEventListener('click', () => {
+    document.body.classList.add('ver-resultado');
+    submitQuestions.style.display = 'none';
+    const sectionResults = document.createElement('div');
+    sectionResults.classList.add('section-results');
+    sectionResults.innerText = 'Seu resultado foi';
+    lastElementBody.appendChild(sectionResults);
+  });
+  
 
