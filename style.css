@@ -5,6 +5,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+}
+
 h1 {
     text-align: center;
     margin: 50px 0 50px 0;
@@ -61,6 +66,11 @@ span {
     font-size: 40px;
 }
 
+.btn-submit {
+    padding: 10px;
+    border: none;
+}
+
 @keyframes  question-animation{
     from {
         opacity: 0;
@@ -70,3 +80,21 @@ span {
         opacity: 1;
     }
 }
+
+.btn-submit {
+    padding: 10px;
+    border: 1px solid #323330;
+    text-align: center;
+    background: #f0db4f;
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 1px 1px 5px;
+    width: 134px;
+  }
+  
+  .btn-submit:hover {
+    background: #ffeb6b;
+  }
+  .btn-submit:active {
+    background: #beae40;
+  }

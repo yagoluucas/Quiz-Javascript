@@ -22,7 +22,7 @@ events.forEach(event => {
                } else if(lastSection == 'button') {
                 const lastElementBody = document.lastChild
                 createButton.innerText = 'Enviar Respostas'
-                createButton.classList.add('enviar') 
+                createButton.classList.add('btn-submit') 
                 lastElementBody.appendChild(createButton)
                }
             })
