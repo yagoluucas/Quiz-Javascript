@@ -41,9 +41,8 @@ events.forEach(event => {
             })
         }
     })
-})
 
-//iniciado o evento para mostrar o resultado :
+    //iniciado o evento para mostrar o resultado :
 
 submitQuestions.addEventListener('click', () => {
     document.body.classList.add('ver-resultado');
@@ -53,5 +52,7 @@ submitQuestions.addEventListener('click', () => {
     sectionResults.innerText = 'Seu resultado foi';
     lastElementBody.appendChild(sectionResults);
   });
+})
+
   
 
