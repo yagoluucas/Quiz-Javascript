@@ -1,11 +1,14 @@
+function principal() {
 const nextSection = document.querySelectorAll("[data-next]")
 const previousSection = document.querySelectorAll('[data-previous]')
 const questions = document.querySelectorAll('section')
+const fieldset = document.querySelector('fieldset')
 const events = ['click', 'touchstart']
 const createButton = document.createElement('button') //movi para cá e arrumei o bug
 createButton.classList.add('btn-submit') 
-const submitQuestions = document.querySelector('.btn-submit')
-const lastElementBody = document.lastChild // movi para cá para usar na hora que mostrar o resultado
+const lastElementBody = document.body // movi para cá para usar na hora que mostrar o resultado
+const form = document.querySelector('form') //coloquei aqui para depois que clicar o botão o formulario sumir
+let nota = 0;
 
 
 events.forEach(event => {
@@ -44,15 +47,17 @@ events.forEach(event => {
 
     //iniciado o evento para mostrar o resultado :
 
-submitQuestions.addEventListener('click', () => {
-    document.body.classList.add('ver-resultado');
-    submitQuestions.style.display = 'none';
-    const sectionResults = document.createElement('div');
-    sectionResults.classList.add('section-results');
-    sectionResults.innerText = 'Seu resultado foi';
-    lastElementBody.appendChild(sectionResults);
-  });
 })
 
-  
+createButton.addEventListener('click', () => {
+    fieldset.style.display = "none"
+    document.body.classList.add('ver-resultado');
+    createButton.style.display = 'none';
+    const sectionResults = document.createElement('div');
+    sectionResults.classList.add('section-results');
+    sectionResults.innerText = `A sua nota foi : ${nota}`;
+    form.appendChild(sectionResults);
+  });
+}
 
+principal()

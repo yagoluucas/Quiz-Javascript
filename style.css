@@ -5,11 +5,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-}
-
 h1 {
     text-align: center;
     margin: 50px 0 50px 0;
@@ -21,15 +16,26 @@ h2 {
     text-transform: uppercase;
 }
 
-fieldset {
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+fieldset, .section-results {
     padding: 20px;
-    border: none;
+    border: 2px solid #323330;
     margin: 10px auto;
-    background: blue;
+    background: #f0db4f;
     color: #fff;
     min-width: 400px;
-    max-width: 950px;
+    max-width: 1200px;
     width: 70%;
+    color: #000;
+    display: flex;
+    align-items: center;
+    box-shadow: 10px 10px 10px black;
 }
 
 div {
@@ -71,6 +77,15 @@ span {
     border: none;
 }
 
+.previous {
+    text-align: left;
+}
+
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+}
+
 @keyframes  question-animation{
     from {
         opacity: 0;
@@ -89,7 +104,7 @@ span {
     margin: 20px;
     font-family: Arial, Helvetica, sans-serif;
     box-shadow: 1px 1px 5px;
-    width: 134px;
+    width: 150px;
   }
   
   .btn-submit:hover {
@@ -98,3 +113,12 @@ span {
   .btn-submit:active {
     background: #beae40;
   }
+
+.ver-resultado {
+    background: #212120;
+}
+
+.section-results {
+    width: 30%;
+    text-align: center;
+}
