@@ -23,6 +23,10 @@ body {
     flex-direction: column;
 }
 
+form {
+    margin-bottom: 30px;
+}
+
 fieldset, .section-results {
     padding: 20px;
     border: 2px solid #323330;
@@ -61,6 +65,11 @@ input {
 
 section {
     display: none;
+    position: relative;
+}
+
+section:first-child {
+    padding-bottom: 47px;
 }
 
 .ativo {
@@ -77,8 +86,9 @@ span {
     border: none;
 }
 
-.previous {
-    text-align: left;
+.next {
+    position: absolute;
+    right: 0;
 }
 
 .navegacao {
@@ -122,3 +132,5 @@ span {
     width: 30%;
     text-align: center;
 }
+
+

@@ -24,7 +24,8 @@ events.forEach(event => {
                if(event.target.parentNode.classList.contains('ativo')) {
                     event.target.parentNode.classList.remove('ativo')
                     event.target.parentNode.nextElementSibling.classList.add('ativo')
-               } else if(lastSection == 'button') {  
+               } else if(lastSection == 'button') {
+                form.style.marginBottom = '0'
                 createButton.innerText = 'Enviar Respostas'
                 lastElementBody.appendChild(createButton)
                }
@@ -49,13 +50,22 @@ events.forEach(event => {
 
 })
 
-createButton.addEventListener('click', () => {
+createButton.addEventListener('click', () => { 
+
+    const radioSelecionado = document.querySelectorAll('input[type="radio"]:checked') //selecionamos todos os input que está marcado
+
+    radioSelecionado.forEach(item => {
+        if(item.value != 'on') {
+            nota+=1
+        }
+    }) //faz um loop por conta input marcado e verifica se o valor dele é diferente de on
+
     fieldset.style.display = "none"
     document.body.classList.add('ver-resultado');
     createButton.style.display = 'none';
     const sectionResults = document.createElement('div');
     sectionResults.classList.add('section-results');
-    sectionResults.innerText = `A sua nota foi : ${nota}`;
+    sectionResults.innerText = `Voce acertou ${nota} das 10 questões !`;
     form.appendChild(sectionResults);
   });
 }
