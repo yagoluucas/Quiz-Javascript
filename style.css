@@ -12,7 +12,14 @@ h1 {
 
 h2 {
     text-align: left;
-    margin: 20px;
+    margin: 20px 20px 35px 20px;
+    text-transform: uppercase;
+    text-transform: lowercase;
+    font-size: 23px;
+
+}
+
+h2::first-letter {
     text-transform: uppercase;
 }
 
@@ -34,8 +41,8 @@ fieldset, .section-results {
     background: #f0db4f;
     color: #fff;
     min-width: 400px;
-    max-width: 1200px;
-    width: 70%;
+    max-width: 930px;
+    width: 90%;
     color: #000;
     display: flex;
     align-items: center;

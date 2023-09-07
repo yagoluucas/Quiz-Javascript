@@ -50,6 +50,8 @@ events.forEach(event => {
 
 })
 
+// revisar toda essa parte de baixo
+
 createButton.addEventListener('click', () => { 
 
     const radioSelecionado = document.querySelectorAll('input[type="radio"]:checked') //selecionamos todos os input que está marcado
@@ -58,7 +60,7 @@ createButton.addEventListener('click', () => {
         if(item.value != 'on') {
             nota+=1
         }
-    }) //faz um loop por conta input marcado e verifica se o valor dele é diferente de on
+    }) //faz um loop por cada input marcado e verifica se o valor dele é diferente de on
 
     fieldset.style.display = "none"
     document.body.classList.add('ver-resultado');
