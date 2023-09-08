@@ -86,6 +86,7 @@ section:first-child {
 
 span {
     font-size: 40px;
+    cursor: pointer;
 }
 
 .btn-submit {
@@ -122,6 +123,7 @@ span {
     font-family: Arial, Helvetica, sans-serif;
     box-shadow: 1px 1px 5px;
     width: 150px;
+    cursor: pointer;
   }
   
   .btn-submit:hover {
@@ -132,12 +134,13 @@ span {
   }
 
 .ver-resultado {
-    background: #212120;
+    background: #292727;
 }
 
 .section-results {
-    width: 30%;
+    font-size: 18px;
     text-align: center;
+    animation: question-animation 0.3s forwards;
 }
 
 @media (max-width: 600px) {
