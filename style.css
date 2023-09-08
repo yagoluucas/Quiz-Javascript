@@ -40,7 +40,7 @@ fieldset, .section-results {
     margin: 10px auto;
     background: #f0db4f;
     color: #fff;
-    min-width: 400px;
+    min-width: 340px;
     max-width: 930px;
     width: 90%;
     color: #000;
@@ -140,4 +140,8 @@ span {
     text-align: center;
 }
 
-
+@media (max-width: 600px) {
+    fieldset, .section-results {
+        width: 340px;
+    }
+}
