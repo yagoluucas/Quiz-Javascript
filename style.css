@@ -5,6 +5,76 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Link sobre mim */
+
+a {
+    text-decoration: none;
+    color: #323330;
+}
+
+a:hover {
+    animation: sobre 3s linear infinite;
+}
+
+@keyframes sobre {
+    0% {
+        color: #323330;
+    }
+
+    25% {
+        color: #f0db4f;
+    }
+
+    50% {
+        color: #323330;
+    }
+
+    75% {
+        color: #f0db4f;
+    }
+
+    100% {
+        color: #323330;
+    }
+
+}
+
+.sobre {
+    font-size: 20px;
+    top: 15px;
+    right: 10px;
+    position: absolute;
+}
+
+.sobre-results {
+    animation: sobre 3s linear infinite;
+}
+
+/* Fim do link */
+
+/* Setas */
+
+fieldset img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.next {
+    position: absolute;
+    right: 0;
+}
+
+/* fim das setas */
+
+/* titulos e questões */
+
 h1 {
     text-align: center;
     margin: 50px 0 50px 0;
@@ -13,25 +83,20 @@ h1 {
 h2 {
     text-align: left;
     margin: 20px 20px 35px 20px;
-    text-transform: uppercase;
     text-transform: lowercase;
     font-size: 23px;
-
 }
 
 h2::first-letter {
     text-transform: uppercase;
 }
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+/* fim dos titulos e questões */
+
+/* Inicio da seção das questões */
 
 form {
-    margin-bottom: 30px;
+    margin: 20px;
 }
 
 fieldset, .section-results {
@@ -45,13 +110,9 @@ fieldset, .section-results {
     width: 90%;
     color: #000;
     display: flex;
+    flex-direction: column;
     align-items: center;
     box-shadow: 10px 10px 10px black;
-}
-
-div {
-    justify-content: space-between;
-    align-items: flex-start;
 }
 
 label {
@@ -84,24 +145,14 @@ section:first-child {
     animation: question-animation 0.3s forwards;
 }
 
-span {
-    font-size: 40px;
-    cursor: pointer;
+.ver-resultado {
+    background: #292727;
 }
 
-.btn-submit {
-    padding: 10px;
-    border: none;
-}
-
-.next {
-    position: absolute;
-    right: 0;
-}
-
-.navegacao {
-    display: flex;
-    justify-content: space-between;
+.section-results {
+    font-size: 18px;
+    text-align: center;
+    animation: question-animation 0.3s forwards;
 }
 
 @keyframes  question-animation{
@@ -112,6 +163,15 @@ span {
     to {
         opacity: 1;
     }
+}
+
+/* Fim da seção das questões */
+
+/* inicio do botão */
+
+.btn-submit {
+    padding: 10px;
+    border: none;
 }
 
 .btn-submit {
@@ -133,18 +193,14 @@ span {
     background: #beae40;
   }
 
-.ver-resultado {
-    background: #292727;
-}
-
-.section-results {
-    font-size: 18px;
-    text-align: center;
-    animation: question-animation 0.3s forwards;
-}
+/* fim do botão */  
 
 @media (max-width: 600px) {
     fieldset, .section-results {
         width: 340px;
+    }
+
+    .sobre {
+        position: relative;
     }
 }
