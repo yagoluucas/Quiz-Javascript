@@ -10,6 +10,7 @@ const form = document.querySelector('form') //coloquei aqui para depois que clic
 const sobreMim = document.querySelector('[data-sobre]')
 let nota = 0;
 createButton.classList.add('btn-submit')
+const resposta = document.querySelectorAll('.question')
 
 events.forEach(event => {
 
@@ -50,6 +51,24 @@ events.forEach(event => {
 
 })
 
+//função para mostrar o resultado as questões certas:
+
+function questoesCertas() {
+
+    questions.forEach(questao => questao.classList.add('ativo'))
+
+    resposta.forEach(resposta => {
+        if(resposta.dataset.correta) {
+            resposta.classList.add('resposta-certa')
+        }
+    })
+
+    nextSection.forEach(seta => seta.style.display = 'none')
+
+    previousSection.forEach(seta => seta.style.display = 'none')
+}
+
+
 // revisar toda essa parte de baixo
 
 createButton.addEventListener('click', () => { 
@@ -62,14 +81,15 @@ createButton.addEventListener('click', () => {
         }
     }) //faz um loop por cada input marcado e verifica se o valor dele é diferente de on
 
-    fieldset.style.display = "none"
+    questoesCertas()
+
     sobreMim.classList.add('sobre-results')
     document.body.classList.add('ver-resultado');
     createButton.style.display = 'none';
     const sectionResults = document.createElement('div');
     sectionResults.classList.add('section-results');
     sectionResults.innerText = `Voce acertou ${nota} das 10 questões !`;
-    form.appendChild(sectionResults);
+    form.replaceChild(sectionResults, form.firstElementChild)
   });
 }
 
