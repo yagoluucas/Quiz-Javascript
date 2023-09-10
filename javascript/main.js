@@ -2,7 +2,6 @@ function principal() {
 const nextSection = document.querySelectorAll("[data-next]")
 const previousSection = document.querySelectorAll('[data-previous]')
 const questions = document.querySelectorAll('section')
-const fieldset = document.querySelector('fieldset')
 const events = ['click', 'touchstart']
 const createButton = document.createElement('button') //movi para cá e arrumei o bug 
 const lastElementBody = document.body // movi para cá para usar na hora que mostrar o resultado
@@ -11,6 +10,21 @@ const sobreMim = document.querySelector('[data-sobre]')
 let nota = 0;
 createButton.classList.add('btn-submit')
 const resposta = document.querySelectorAll('.question')
+const respondidas = document.querySelector('.respondidas')
+const input = document.querySelectorAll('input')
+
+form.addEventListener('change', questoesRespondidas)
+
+function questoesRespondidas() {
+    let questaoRespondida = 0
+    input.forEach(opcao => {
+        if(opcao.checked == true) {
+            console.log(opcao.checked)
+            questaoRespondida++
+        }
+    })
+    respondidas.innerText = `${questaoRespondida} das 10 questões respondidas`
+}
 
 events.forEach(event => {
 
@@ -73,7 +87,8 @@ function questoesCertas() {
 
 createButton.addEventListener('click', () => { 
 
-    const radioSelecionado = document.querySelectorAll('input[type="radio"]:checked') //selecionamos todos os input que está marcado
+    const radioSelecionado = document.querySelectorAll('input[type="radio"]:checked')
+ //selecionamos todos os input que está marcado
 
     radioSelecionado.forEach(item => {
         if(item.value != 'on') {

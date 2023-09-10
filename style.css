@@ -87,6 +87,14 @@ h2 {
     font-size: 23px;
 }
 
+.respondidas {
+    font-size: 16px;
+    margin: 10px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1.5px;
+}
+
 h2::first-letter {
     text-transform: uppercase;
 }
@@ -137,8 +145,8 @@ section {
     margin: 5px;
 }
 
-section:first-child {
-    padding-bottom: 47px;
+.primeira {
+    margin-bottom: 27px;
 }
 
 .ativo {
@@ -208,7 +216,9 @@ section:first-child {
     fieldset, .section-results {
         width: 340px;
     }
+}
 
+@media (max-width: 1165px) {
     .sobre {
         position: relative;
     }
