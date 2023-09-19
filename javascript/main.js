@@ -18,10 +18,7 @@ form.addEventListener('change', questoesRespondidas)
 function questoesRespondidas() {
     let questaoRespondida = 0
     input.forEach(opcao => {
-        if(opcao.checked == true) {
-            console.log(opcao.checked)
-            questaoRespondida++
-        }
+        if(opcao.checked == true) {questaoRespondida++}
     })
     respondidas.innerText = `${questaoRespondida} das 10 questões respondidas`
 }
@@ -61,42 +58,32 @@ events.forEach(event => {
         }
     })
 
-    //iniciado o evento para mostrar o resultado :
-
 })
 
-//função para mostrar o resultado as questões certas:
+//parte de baixo foi criada para adicionar o evento depois de clica no botão enviar
+createButton.addEventListener('click', () => {
 
-function questoesCertas() {
 
+    //selecionamos todos os input que está marcado
+    const radioSelecionado = document.querySelectorAll('input[type="radio"]:checked')
+    
     questions.forEach(questao => questao.classList.add('ativo'))
 
     resposta.forEach(resposta => {
-        if(resposta.dataset.correta) {
-            resposta.classList.add('resposta-certa')
-        }
+        if(resposta.dataset.correta){resposta.classList.add('resposta-certa')}
     })
 
     nextSection.forEach(seta => seta.style.display = 'none')
 
     previousSection.forEach(seta => seta.style.display = 'none')
-}
-
-
-// revisar toda essa parte de baixo
-
-createButton.addEventListener('click', () => { 
-
-    const radioSelecionado = document.querySelectorAll('input[type="radio"]:checked')
- //selecionamos todos os input que está marcado
 
     radioSelecionado.forEach(item => {
-        if(item.value != 'on') {
-            nota+=1
+        if(item.value != 'on') {nota+=1}//faz um loop por cada input marcado e verifica se o valor dele é diferente de on
+        if(!item.parentNode.dataset.correta) {
+            console.log('oi')
+            item.parentNode.classList.add('errou')
         }
-    }) //faz um loop por cada input marcado e verifica se o valor dele é diferente de on
-
-    questoesCertas()
+    })
 
     sobreMim.classList.add('sobre-results')
     document.body.classList.add('ver-resultado');

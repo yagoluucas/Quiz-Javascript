@@ -207,6 +207,11 @@ section {
 
 /* Seção de resposta */
 
+.errou {
+    border: 3px solid #ed0606;
+    border-radius: 1px;
+}
+
 .resposta-certa {
     border: 3px solid #0db60d;
     border-radius: 1px;
