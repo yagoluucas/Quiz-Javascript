@@ -2,7 +2,7 @@ function principal() {
 const nextSection = document.querySelectorAll("[data-next]")
 const previousSection = document.querySelectorAll('[data-previous]')
 const questions = document.querySelectorAll('section')
-const events = ['click']
+let events
 const createButton = document.createElement('button') //movi para cá e arrumei o bug 
 const lastElementBody = document.body // movi para cá para usar na hora que mostrar o resultado
 const form = document.querySelector('form') //coloquei aqui para depois que clicar o botão o formulario sumir
@@ -12,6 +12,8 @@ createButton.classList.add('btn-submit')
 const resposta = document.querySelectorAll('.question')
 const respondidas = document.querySelector('.respondidas')
 const input = document.querySelectorAll('input')
+
+if(window.innerWidth <= 1200) {events = 'touchend'} else {events = 'click'}
 
 form.addEventListener('change', questoesRespondidas)
 
@@ -26,7 +28,7 @@ function questoesRespondidas() {
 events.forEach(event => {
 
     nextSection.forEach(next => {
-        next.addEventListener(event, nextElement)
+        next.addEventListener(events, nextElement)
     
         function nextElement(event){
             questions.forEach(secao => {
@@ -46,7 +48,7 @@ events.forEach(event => {
     })
 
     previousSection.forEach(previous => {
-        previous.addEventListener(event, previousElement)
+        previous.addEventListener(events, previousElement)
     
         function previousElement(event) {
             questions.forEach(secao => {
@@ -61,7 +63,7 @@ events.forEach(event => {
 })
 
 //parte de baixo foi criada para adicionar o evento depois de clica no botão enviar
-createButton.addEventListener('click', () => {
+createButton.addEventListener(events, () => {
 
 
     //selecionamos todos os input que está marcado
