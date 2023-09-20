@@ -151,7 +151,7 @@ section {
 
 .ativo {
     display: block;
-    animation: question-animation 1s forwards;
+    animation: question-animation 0.5s forwards;
 }
 
 .ver-resultado {

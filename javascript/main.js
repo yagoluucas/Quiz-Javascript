@@ -25,27 +25,24 @@ function questoesRespondidas() {
     respondidas.innerText = `${questaoRespondida} das 10 questões respondidas`
 }
 
-events.forEach(event => {
+nextSection.forEach(next => {
+    next.addEventListener(events, nextElement)
 
-    nextSection.forEach(next => {
-        next.addEventListener(events, nextElement)
-    
-        function nextElement(event){
-            questions.forEach(secao => {
+    function nextElement(event){
+        questions.forEach(secao => {
 
-               const lastSection = event.target.parentNode.dataset.lastSection //pegar o atributo ultima seção
-    
-               if(event.target.parentNode.classList.contains('ativo')) {
-                    event.target.parentNode.classList.remove('ativo')
-                    event.target.parentNode.nextElementSibling.classList.add('ativo')
-               } else if(lastSection == 'button') {
-                form.style.marginBottom = '0'
-                createButton.innerText = 'Enviar Respostas'
-                lastElementBody.appendChild(createButton)
-               }
-            })
-        }
-    })
+           const lastSection = event.target.parentNode.dataset.lastSection //pegar o atributo ultima seção
+
+           if(event.target.parentNode.classList.contains('ativo')) {
+                event.target.parentNode.classList.remove('ativo')
+                event.target.parentNode.nextElementSibling.classList.add('ativo')
+           } else if(lastSection == 'button') {
+            form.style.marginBottom = '0'
+            createButton.innerText = 'Enviar Respostas'
+            lastElementBody.appendChild(createButton)
+           }
+        })
+    }
 
     previousSection.forEach(previous => {
         previous.addEventListener(events, previousElement)
