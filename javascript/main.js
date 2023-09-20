@@ -2,7 +2,7 @@ function principal() {
 const nextSection = document.querySelectorAll("[data-next]")
 const previousSection = document.querySelectorAll('[data-previous]')
 const questions = document.querySelectorAll('section')
-const events = ['click', 'touchend']
+const events = ['click']
 const createButton = document.createElement('button') //movi para cá e arrumei o bug 
 const lastElementBody = document.body // movi para cá para usar na hora que mostrar o resultado
 const form = document.querySelector('form') //coloquei aqui para depois que clicar o botão o formulario sumir
